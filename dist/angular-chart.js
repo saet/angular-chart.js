@@ -118,7 +118,8 @@
           chartColors: '=?',
           chartClick: '=?',
           chartHover: '=?',
-          chartDatasetOverride: '=?'
+          chartDatasetOverride: '=?',
+          chartPlugins: '=?'
         },
         link: function (scope, elem/*, attrs */) {
           if (useExcanvas) window.G_vmlCanvasManager.initElement(elem[0]);
@@ -190,7 +191,8 @@
       scope.chart = new ChartJs.Chart(ctx, {
         type: type,
         data: data,
-        options: options
+        options: options,
+        plugins: scope.chartPlugins
       });
       scope.$emit('chart-create', scope.chart);
       bindEvents(cvs, scope);
